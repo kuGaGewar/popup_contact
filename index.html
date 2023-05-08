@@ -85,13 +85,13 @@
             });
         });
         
-        //
-        // When the user clicks anywhere outside of the modal, close it
-        //$('body').bind('click', function(e){
-        //    if($(e.target).hasClass("modal")){
-        //        modal.hide();
-        //    }
-        //});
+        
+        //When the user clicks anywhere outside of the modal, close it
+        $('body').bind('click', function(e){
+            if($(e.target).hasClass("modal")){
+                modal.hide();
+            }
+        });
 
         
         </script>
