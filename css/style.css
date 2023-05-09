@@ -3,16 +3,16 @@
     padding: 20px;
   }
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #969494;
+    color: #ffffff;
   }
   ::-moz-placeholder { /* Firefox 19+ */
-    color: #969494;
+    color: #ffffff;
   }
   :-ms-input-placeholder { /* IE 10+ */
-    color: #969494;
+    color: #ffffff;
   }
   :-moz-placeholder { /* Firefox 18- */
-    color: #969494;
+    color: #ffffff;
   }
   
   /*Animation*/
@@ -43,14 +43,14 @@
     border: 1px solid #888;
     width: 1118px;
     height: 647px;
-    background-color: #fff;
+    background-color:#6F6E70;
     border: 1px solid rgba(0,0,0,.2);
-    border-radius: .3rem;
+    border-radius: 1rem;
     outline: 0;
   }
 
   .modal-header {
-      height: 90px;
+      height: 57px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -61,23 +61,34 @@
       -ms-flex-pack: justify;
       justify-content: space-between;
       padding: 1rem;
-      border-bottom: 1px solid #e9ecef;
-      border-top-left-radius: .3rem;
-      border-top-right-radius: .3rem;
+      border-bottom: 1px solid #000000;
+      border-radius: 1rem;
+      background-color:rgb(0,0,0,0.76);
   }
 
-  /*
+  
   .modal-title {
-      height: 90px;
+    
+    margin-top: auto;
+    margin-bottom: auto;
   }
-  */
 
-  /*
+  
   h1.modal-title {
-      font-size: 1.25rem;
-      color: #666;
+      font-size: 220%;
+      color: #ffffff;
   }
-  */
+  
+
+  .modal-header {
+    height: 57px;
+    display: flex;
+    display: auto;
+    align-items: flex-start;
+    
+    padding: 1rem;
+    border-bottom: 1px solid #000000;
+}
 
   .close {
       float: right;
@@ -108,8 +119,8 @@
       padding: 1rem;
   }
   .modal-body p {
-      margin-top: 0;
-      margin-bottom: 1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
   .modal-footer {
       display: -webkit-box;
@@ -143,16 +154,20 @@
       cursor: pointer;
   }
   .btn-primary {
+      width: 396px;
+      height: 56px;
       color: #fff;
-      background-color: #07a8ff;
-      border-color: #07a8ff;
+      background-color: #e50083;
+      border-color: rgb(0,0,0,0.2);
+      border-radius: 1.1rem;
       display: block;
       margin: 0 auto;
+      font-size: 25pt;
   }
   .btn-primary:hover {
       color: #fff;
-      background-color: #0069d9;
-      border-color: #0062cc;
+      background-color: #ff0090;
+      border-color: rgb(0,0,0,0.2);
   }
   .btn:focus, .btn:hover {
       text-decoration: none;
@@ -169,17 +184,17 @@
   }
   .form-control {
       font-family: Verdana, Geneva, Tahoma, sans-serif;
+      
       display: block;
-      width: 95%;
       /*height: 34px;*/
       padding: 6px 12px;
       font-size: 14px;
       line-height: 1.42857143;
-      color: #555;
-      background-color: #fff;
+      color: white;
+      background-color: #333030;
       background-image: none;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      border: 1px solid rgb(0, 0, 0, 0.2);
+      border-radius: 6px;
       -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
       box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
       -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
