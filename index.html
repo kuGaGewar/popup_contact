@@ -40,28 +40,44 @@
                     <!-- Contact form -->
                     <div class="form-personal">
                         <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Your Name*" required="">
+                            <div class="text">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name*" style='width:16em' required="">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Your E-Mail*" required="">
+                            <div class="email">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Your E-Mail*" style='width:20em' required="">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="phonenumber" name="phonenumber" id="phonenumber" class="form-control" placeholder="Phonenumber" required="">
+                            <div class="phonenumber">
+                                <input type="phonenumber" name="phonenumber" id="phonenumber" class="form-control" placeholder="Phonenumber" style='width:14em' required="">
+                            </div>
                         </div>
                     </div>
-                    
+                    <div class="form-work">
+                        <div class="form-group">
+                            <div class="company">
+                                <input type="company" name="company" id="company" class="form-control" placeholder="Company*" style='width:16em' required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="subject">
+                                <input type="subject" name="subject" id="subject" class="form-control" placeholder="Subject*" style='width:24.5em' required="">
+                            </div>
+                        </div>
+                    </div>
+                    <label>Antispam*</label>
                     <div class="form-group">
-                        <input type="company" name="company" id="company" class="form-control" placeholder="Company*" required="">
+                        
+                        <div class="antispam">
+                            <input type="antispam" name="antispam" id="antispam" class="form-control" placeholder="antispam*" style='width:62.75em' required="">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="subject" name="subject" id="subject" class="form-control" placeholder="Subject*" required="">
-                    </div>
-                    <div class="form-group">
-                        <label>Antispam*</label>
-                        <input type="antispam" name="antispam" id="antispam" class="form-control" placeholder="antispam*" required="">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" id="message" class="form-control" placeholder="Your message here" rows="6"></textarea>
+                        <div class="message">
+                            <textarea name="message" id="message" class="form-control" placeholder="Your message here" style='width:62.75em' rows="5"></textarea>
+                        </div>
                     </div>
                     
                 </div>
