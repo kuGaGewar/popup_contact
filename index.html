@@ -24,10 +24,13 @@
         <div id="modalDialog" class="modal">
             <div class="modal-content animate-top">
                 <div class="modal-header">
-                    <h5 class="modal-title">Contact Us</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h1 class="modal-title">Get into Contact with us!</h1>
+                    <!--
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
-                    </button>
+                     </button>
+                     -->
+                    
                 </div>
                 <form method="post" id="contactFrm">
                 <div class="modal-body">
@@ -36,17 +39,28 @@
                     
                     <!-- Contact form -->
                     <div class="form-group">
-                        <label>Name:</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required="">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Your Name*" required="">
                     </div>
                     <div class="form-group">
-                        <label>Email:</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required="">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Your E-Mail*" required="">
                     </div>
                     <div class="form-group">
-                        <label>Message:</label>
+                        <input type="phonenumber" name="phonenumber" id="phonenumber" class="form-control" placeholder="Phonenumber" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="company" name="company" id="company" class="form-control" placeholder="Company*" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="subject" name="subject" id="subject" class="form-control" placeholder="Subject*" required="">
+                    </div>
+                    <div class="form-group">
+                        <label>Antispam*</label>
+                        <input type="antispam" name="antispam" id="antispam" class="form-control" placeholder="antispam*" required="">
+                    </div>
+                    <div class="form-group">
                         <textarea name="message" id="message" class="form-control" placeholder="Your message here" rows="6"></textarea>
                     </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <!-- Submit button -->
