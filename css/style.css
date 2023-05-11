@@ -280,8 +280,12 @@
   }
 
   .link {
-    color: #000;
+    color: #0000EE;
   }
+
+.link:visited {
+    color: #551A8B;
+}
 
   .link:hover {
     color: #c51818;
