@@ -280,16 +280,18 @@
   }
 
   .link {
-    color: #0000EE;
+    color: #0855a1;
   }
-
-.link:visited {
-    color: #551A8B;
-}
 
   .link:hover {
     color: #c51818;
   }
+
+  /*
+  .link:visited {
+    color: #551A8B;
+  }
+  */
   
   .alert {
       position: relative;
