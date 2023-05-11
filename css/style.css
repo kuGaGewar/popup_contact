@@ -159,15 +159,14 @@
       cursor: pointer;
   }
   .btn-primary {
-      width: 396px;
-      height: 56px;
+      width: 380px;
+      height: 55px;
       color: #fff;
       background-color: #e50083;
       border-color: rgb(0,0,0,0.2);
       border-radius: 1.1rem;
       display: block;
       margin: 0 auto;
-      font-size: 25pt;
       
   }
   .btn-primary:hover {
@@ -201,11 +200,12 @@
   .form-work {
     display: flex;
     text-align: center;
+    height: 60px;
   }
 
   .form-control {
     
-      padding: 6px 16px;
+      padding: 9px 16px;
       font-size: 16px;
       
       
@@ -232,6 +232,7 @@
     
     display: block;
     text-align: center;
+
   }
 
   textarea {
@@ -253,18 +254,34 @@
     padding-left: 50px;
   }
 
+  .antispam {
+    
+  }
+
   .message {
     margin-top:3px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     padding-left: 13px;
+  }
+
+  .submit {
+    padding-top: 5px;
+    font-size: 20pt;
+    opacity: 0.8;
+  }
+
+  .form-policy {
+    font-size: 17px;
   }
 
   .form-check {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
-    padding-right: 680px;
-    margin-bottom: 34px;
+    padding-right: 690px;
+    margin-bottom: 35px;
   }
+
+  
   
   .alert {
       position: relative;
