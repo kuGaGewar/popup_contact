@@ -3,7 +3,7 @@
 $toEmail = 'batti.schmidt@hotmail.com';
 
 $status = 0;
-$statusMsg = 'Oops! Something went wrong! Please try again late.';
+$statusMsg = 'Oops! Something went wrong! Please try again later.';
 if(isset($_POST['contact_submit'])){
     // Get the submitted form data
     $email = $_POST['email'];
