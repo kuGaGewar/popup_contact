@@ -21,7 +21,7 @@
         <button id="mbtn" class="btn turned-button">Contact Us</button>
         
         <!-- The Modal -->
-        <div id="modalDialog" class="modal">
+        <div id="modalDialog" class="modal" >
             <div class="modal-content animate-top">
                 <div class="modal-header">
                     <h1 class="modal-title">Get into Contact with us!</h1>
@@ -33,67 +33,67 @@
                     
                 </div>
                 <form method="post" id="contactFrm">
-                <div class="modal-body">
-                    <!-- Form submission status -->
-                    <div class="response"></div>
-                    
-                    <!-- Contact form -->
-                    <div class="form-personal">
-                        <div class="form-group">
-                            <div class="text">
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name*" style='width:16em' required="">
+                    <div class="modal-body">
+                        <!-- Form submission status -->
+                        <div class="response"></div>
+                        
+                        <!-- Contact form -->
+                        <div class="form-personal">
+                            <div class="form-group">
+                                <div class="text">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Your Name*" style='width:16em' required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="email">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Your E-Mail*" style='width:20em' required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="phonenumber">
+                                    <input type="phonenumber" name="phonenumber" id="phonenumber" class="form-control" placeholder="Phonenumber" style='width:14em'>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="email">
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Your E-Mail*" style='width:20em' required="">
+                        <div class="form-work">
+                            <div class="form-group">
+                                <div class="company">
+                                    <input type="company" name="company" id="company" class="form-control" placeholder="Company*" style='width:16em' required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="subject">
+                                    <input type="subject" name="subject" id="subject" class="form-control" placeholder="Subject*" style='width:24.5em' required="">
+                                </div>
                             </div>
                         </div>
+                        <label>Antispam*</label>
                         <div class="form-group">
-                            <div class="phonenumber">
-                                <input type="phonenumber" name="phonenumber" id="phonenumber" class="form-control" placeholder="Phonenumber" style='width:14em'>
+                            <div class="antispam">
+                                <input type="antispam" name="antispam" id="antispam" class="form-control" placeholder="2+2?" style='width:62.75em' required="">
                             </div>
                         </div>
+                        
+                            <div class="message">
+                                <textarea name="message" id="message" class="form-control" placeholder="Your message here" style='width:62.75em' rows="5"></textarea>
+                            </div>
+                        
+                        
                     </div>
-                    <div class="form-work">
-                        <div class="form-group">
-                            <div class="company">
-                                <input type="company" name="company" id="company" class="form-control" placeholder="Company*" style='width:16em' required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="subject">
-                                <input type="subject" name="subject" id="subject" class="form-control" placeholder="Subject*" style='width:24.5em' required="">
-                            </div>
-                        </div>
-                    </div>
-                    <label>Antispam*</label>
-                    <div class="form-group">
-                        <div class="antispam">
-                            <input type="antispam" name="antispam" id="antispam" class="form-control" placeholder="2+2?" style='width:62.75em' required="">
-                        </div>
+                    <div class="form-check">
+                        <label class="form-policy">
+                            <input type="checkbox" name="checkbox" />
+                            I have taken note of the <a href="https://www.google.de" target="_blank" class="link">  privacy policy. </a> 
+                        </label>
                     </div>
                     
-                        <div class="message">
-                            <textarea name="message" id="message" class="form-control" placeholder="Your message here" style='width:62.75em' rows="5"></textarea>
-                        </div>
-                    
-                    
-                </div>
-                <div class="form-check">
-                    <label class="form-policy">
-                        <input type="checkbox" name="checkbox" />
-                        I have taken note of the <a href="https://www.google.de" target="_blank" class="link">  privacy policy. </a> 
-                    </label>
-                </div>
-                
-                <div class="modal-footer">
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary submit" > 
-                            Send
-                    </button>
-                    
-                </div>
+                    <div class="modal-footer">
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary submit" > 
+                                Send
+                        </button>
+                        
+                    </div>
                 </form>
             </div>
         </div>
@@ -129,11 +129,11 @@
         
         
         //When the user clicks anywhere outside of the modal, close it
-        //$('body').bind('click', function(e){
-        //    if($(e.target).hasClass("modal")){
-        //        modal.hide();
-        //    }
-        //});
+        $('body').bind('click', function(e){
+            if($(e.target).hasClass("modal")){
+                modal.hide();
+            }
+        });
 
         
         </script>
