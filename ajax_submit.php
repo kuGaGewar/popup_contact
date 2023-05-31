@@ -1,66 +1,51 @@
 <?php 
-// Email configuration 
+// Recipient email 
 $toEmail = 'batti.schmidt@hotmail.com'; 
-$fromName = 'Sender Name'; 
-$formEmail = 'sender@example.com'; 
  
-$postData = $statusMsg = $valErr = ''; 
-$status = 'error'; 
- 
-// If the form is submitted 
-if(isset($_POST['submit'])){ 
+$status = 0; 
+$statusMsg = 'Something went wrong! Please try again after some time.'; 
+if(isset($_POST['contact_submit'])){ 
     // Get the submitted form data 
-    $postData = $_POST; 
-    $name = trim($_POST['name']); 
-    $email = trim($_POST['email']); 
-    $phonenumber = trim($_POST['phonenumber']);
-    $company = trim($_POST['company']);
-    $subject = trim($_POST['subject']); 
-    $message = trim($_POST['message']); 
+    $email = $_POST['email']; 
+    $name = $_POST['name']; 
+    $message = $_POST['message']; 
      
-    // Validate form fields 
-    if(empty($name)){ 
-         $valErr .= 'Please enter your name.<br/>'; 
-    } 
-    if(empty($email) || filter_var($email, FILTER_VALIDATE_EMAIL) === false){ 
-        $valErr .= 'Please enter a valid email.<br/>'; 
-    }
-    if(empty($company)){ 
-        $valErr .= 'Please enter the company.<br/>'; 
-    }  
-    if(empty($subject)){ 
-        $valErr .= 'Please enter subject.<br/>'; 
-    } 
-    if(empty($message)){ 
-        $valErr .= 'Please enter your message.<br/>'; 
-    } 
-     
-    if(empty($valErr)){ 
-        // Send email notification to the site admin 
-        $subject = 'New contact request submitted'; 
-        $htmlContent = " 
-            <h2>Contact Request Details</h2> 
-            <p><b>Name: </b>".$name."</p> 
-            <p><b>Email: </b>".$email."</p> 
-            <p><b>Phonenumber: </b>".$phonenumber."</p> 
-            <p><b>Company: </b>".$company."</p> 
-            <p><b>Subject: </b>".$subject."</p> 
-            <p><b>Message: </b>".$message."</p> 
-        "; 
+    // Check whether submitted data is not empty 
+    if(!empty($email) && !empty($name) && !empty($message)){ 
          
-        // Always set content-type when sending HTML email 
-        $headers = "MIME-Version: 1.0" . "\r\n"; 
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
-        // Header for sender info 
-        $headers .= 'From:'.$fromName.' <'.$formEmail.'>' . "\r\n"; 
-         
-        // Send email 
-        @mail($toEmail, $subject, $htmlContent, $headers); 
-         
-        $status = 'success'; 
-        $statusMsg = 'Thank you! Your contact request has submitted successfully, we will get back to you soon.'; 
-        $postData = ''; 
+        if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){ 
+            $statusMsg = 'Please enter a valid email.'; 
+        }else{ 
+            $emailSubject = 'Contact Request Submitted by '.$name; 
+            $htmlContent = '<h2>Contact Request Submitted</h2> 
+                <h4>Name</h4><p>'.$name.'</p> 
+                <h4>Email</h4><p>'.$email.'</p> 
+                <h4>Message</h4><p>'.$message.'</p>'; 
+             
+            // Set content-type header for sending HTML email 
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+             
+            // Additional headers 
+            $headers .= 'From: '.$name.'<'.$email.'>'. "\r\n"; 
+             
+            // Send email 
+            $sendEmail = mail($toEmail, $emailSubject, $htmlContent, $headers); 
+            if($sendEmail){ 
+                $status = 1; 
+                $statusMsg = 'Thanks! Your contact request has been submitted successfully.'; 
+            }else{ 
+                $statusMsg = 'Failed! Your contact request submission failed, please try again.'; 
+            } 
+        } 
     }else{ 
-        $statusMsg = '<p>Please fill all the mandatory fields:</p>'.trim($valErr, '<br/>'); 
+        $statusMsg = 'Please fill in all the mandatory fields.'; 
     } 
-}
+} 
+ 
+$response = array( 
+    'status' => $status, 
+    'message' => $statusMsg 
+); 
+echo json_encode($response); 
+?>
